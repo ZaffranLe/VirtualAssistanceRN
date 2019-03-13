@@ -1,0 +1,40 @@
+{
+	"generator-jhipster": {
+		"promptValues": {
+			"packageName": "com.mycompany.myapp",
+			"nativeLanguage": "en"
+		},
+		"jhipsterVersion": "5.8.2",
+		"applicationType": "monolith",
+		"baseName": "JhipsterTest",
+		"packageName": "com.mycompany.myapp",
+		"packageFolder": "com/mycompany/myapp",
+		"serverPort": "8080",
+		"authenticationType": "jwt",
+		"cacheProvider": "ehcache",
+		"enableHibernateCache": true,
+		"websocket": false,
+		"databaseType": "sql",
+		"devDatabaseType": "h2Disk",
+		"prodDatabaseType": "mysql",
+		"searchEngine": "elasticsearch",
+		"messageBroker": false,
+		"serviceDiscoveryType": false,
+		"buildTool": "maven",
+		"enableSwaggerCodegen": false,
+		"jwtSecretKey": "Yjk4MWQ0MDNhYWU2YTI4MTdkZWVlMzcxOWY4ZTE3MTIxZjY3OWU4YmIzMTkyYWEzOTFjYTJlMDc4MWQyY2U0ODRlODBmMGM2YmZlNjAzYmJiNzRjNGY4Yzg3OWNlN2IyNjBlYjY2Yjc0NTJlN2M1YzUxZDQ3NTRlOWFmYzEwMWM=",
+		"clientFramework": "react",
+		"useSass": true,
+		"clientPackageManager": "npm",
+		"testFrameworks": [],
+		"jhiPrefix": "jhi",
+		"entitySuffix": "",
+		"dtoSuffix": "DTO",
+		"otherModules": [],
+		"enableTranslation": true,
+		"nativeLanguage": "en",
+		"languages": [
+			"en"
+		]
+	}
+}

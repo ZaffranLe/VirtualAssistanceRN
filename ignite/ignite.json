@@ -1,0 +1,17 @@
+{
+  "name": "IgniteJHipsterSampleApp",
+  "createdWith": "2.2.3",
+  "boilerplate": "ignite-jhipster",
+  "examples": "classic",
+  "jhipsterDirectory": "../JhipsterTest",
+  "authType": "jwt",
+  "searchEngine": true,
+  "websockets": false,
+  "detox": false,
+  "askToOverwrite": false,
+  "generators": {
+    "entity": "ignite-jhipster",
+    "import-jdl": "ignite-jhipster",
+    "upgrade": "ignite-jhipster"
+  }
+}
