@@ -50,6 +50,15 @@ import CritetiaEvaluateEntityEditScreen from '../modules/entities/critetia-evalu
 import FullEvaluateEntityScreen from '../modules/entities/full-evaluate/full-evaluate-entity-screen'
 import FullEvaluateEntityDetailScreen from '../modules/entities/full-evaluate/full-evaluate-entity-detail-screen'
 import FullEvaluateEntityEditScreen from '../modules/entities/full-evaluate/full-evaluate-entity-edit-screen'
+
+// import by Tung
+import DocumentStorage from '../modules/DocumentStorage/documentStorage'
+import FindNotification from '../modules/FindNotification/findNotification'
+import Evaluate from '../modules/Evaluate/evaluate'
+import Members from '../modules/Members/members'
+import UploadDocument from '../modules/UploadDocument/uploadDocument'
+// end
+
 // ignite-jhipster-navigation-import-needle
 
 export const LOGIN_SCREEN = 'nav.LoginScreen'
@@ -93,6 +102,15 @@ export const CRITETIA_EVALUATE_ENTITY_EDIT_SCREEN = 'Nav.CritetiaEvaluateEntityE
 export const FULL_EVALUATE_ENTITY_SCREEN = 'Nav.FullEvaluateEntityScreen'
 export const FULL_EVALUATE_ENTITY_DETAIL_SCREEN = 'Nav.FullEvaluateEntityDetailScreen'
 export const FULL_EVALUATE_ENTITY_EDIT_SCREEN = 'Nav.FullEvaluateEntityEditScreen'
+
+// export by Tung
+export const DOCUMENT_STORAGE = 'Nav.DocumentStorage'
+export const FIND_NOTIFICATION = 'Nav.FindNotification'
+export const EVALUATE = 'Nav.Evaluate'
+export const MEMBERS = 'Nav.Members'
+export const UPLOAD_DOCUMENT = 'Nav.UploadDocument'
+// end
+
 // ignite-jhipster-navigation-declaration-needle
 
 const store = createStore()
@@ -209,6 +227,15 @@ export function registerScreensAndStartApp () {
   Navigation.registerComponentWithRedux(FULL_EVALUATE_ENTITY_SCREEN, () => FullEvaluateEntityScreen, Provider, store)
   Navigation.registerComponentWithRedux(FULL_EVALUATE_ENTITY_DETAIL_SCREEN, () => FullEvaluateEntityDetailScreen, Provider, store)
   Navigation.registerComponentWithRedux(FULL_EVALUATE_ENTITY_EDIT_SCREEN, () => FullEvaluateEntityEditScreen, Provider, store)
+
+  // Navigation by Tung
+  Navigation.registerComponentWithRedux(DOCUMENT_STORAGE, () => DocumentStorage, Provider, store)
+  Navigation.registerComponentWithRedux(FIND_NOTIFICATION, () => FindNotification, Provider, store)
+  Navigation.registerComponentWithRedux(EVALUATE, () => Evaluate, Provider, store)
+  Navigation.registerComponentWithRedux(MEMBERS, () => Members, Provider, store)
+  Navigation.registerComponentWithRedux(UPLOAD_DOCUMENT, () => UploadDocument, Provider, store)
+  // end
+
   // ignite-jhipster-navigation-registration-needle
 
   Navigation.events().registerAppLaunchedListener(() => {
@@ -933,4 +960,94 @@ export const fullEvaluateEntityDetailScreen = (data) => Navigation.push('center'
     }
   }
 })
+
+//export by Tung
+
+export const documentStorage = (data) => Navigation.push('center', {
+  component: {
+    name: DOCUMENT_STORAGE,
+    passProps: {
+      data
+    },
+    options: {
+      topBar: {
+        title: {
+          text: 'Document Storage',
+          color: Colors.snow
+        }
+      }
+    }
+  }
+})
+
+export const findNotification = (data) => Navigation.push('center', {
+  component: {
+    name: FIND_NOTIFICATION,
+    passProps: {
+      data
+    },
+    options: {
+      topBar: {
+        title: {
+          text: 'Find Notification',
+          color: Colors.snow
+        }
+      }
+    }
+  }
+})
+
+export const evaluate = (data) => Navigation.push('center', {
+  component: {
+    name: EVALUATE,
+    passProps: {
+      data
+    },
+    options: {
+      topBar: {
+        title: {
+          text: 'Evaluate',
+          color: Colors.snow
+        }
+      }
+    }
+  }
+})
+
+export const members = (data) => Navigation.push('center', {
+  component: {
+    name: MEMBERS,
+    passProps: {
+      data
+    },
+    options: {
+      topBar: {
+        title: {
+          text: 'Members',
+          color: Colors.snow
+        }
+      }
+    }
+  }
+})
+
+export const uploadDocument = (data) => Navigation.push('center', {
+  component: {
+    name: UPLOAD_DOCUMENT,
+    passProps: {
+      data
+    },
+    options: {
+      topBar: {
+        title: {
+          text: 'Upload document',
+          color: Colors.snow
+        }
+      }
+    }
+  }
+})
+
+//end
+
 // ignite-jhipster-navigation-method-needle

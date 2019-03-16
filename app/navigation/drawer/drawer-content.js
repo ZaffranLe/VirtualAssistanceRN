@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { ScrollView, Image, BackHandler } from 'react-native'
 import { Navigation } from 'react-native-navigation'
 
-import { loginScreen, registerScreen, forgotPasswordScreen, changePasswordScreen, settingsScreen, entitiesScreen } from '../layouts'
+import { loginScreen, registerScreen, forgotPasswordScreen, changePasswordScreen, settingsScreen, entitiesScreen, documentStorage, evaluate, findNotification, members, uploadDocument } from '../layouts'
 import { connect } from 'react-redux'
 
 import styles from './drawer-content.styles'
@@ -62,7 +62,28 @@ class DrawerContent extends Component {
     this.hideSideMenu()
     this.props.logout()
   }
-
+  // handle change page by Tung
+    handlePressDocumentStorage = () => {
+      this.hideSideMenu()
+      documentStorage()
+    }
+    handlePressEvaluate = () => {
+      this.hideSideMenu()
+      evaluate()
+    }
+    handlePressFindNotification = () => {
+      this.hideSideMenu()
+      findNotification()
+    }
+    handlePressMembers = () => {
+      this.hideSideMenu()
+      members()
+    }
+    handlePressUploadDocument = () => {
+      this.hideSideMenu()
+      uploadDocument()
+    }
+    // end
   render () {
     return (
       <ScrollView style={styles.container}>
@@ -70,8 +91,14 @@ class DrawerContent extends Component {
         {!this.props.loggedIn && (<DrawerButton testID='loginDrawerButton' text='Login' onPress={this.handlePressLogin} />)}
         {!this.props.loggedIn && (<DrawerButton testID='registerDrawerButton' text='Register' onPress={this.handlePressRegister} />)}
         {!this.props.loggedIn && (<DrawerButton testID='forgotPasswordDrawerButton' text='Forgot Password' onPress={this.handlePressForgotPassword} />)}
-
         {this.props.loggedIn && (<DrawerButton testID='entitiesDrawerButton' text='Entities' onPress={this.handlePressEntities} />)}
+        {/* create menu sidebar by Tung */}
+        {this.props.loggedIn && (<DrawerButton testID='documentStorageDrawerButton' text='Document Storage' onPress={this.handlePressDocumentStorage} />)}
+        {this.props.loggedIn && (<DrawerButton testID='uploadDocumentDrawerButton' text='Upload Document' onPress={this.handlePressUploadDocument} />)}
+        {this.props.loggedIn && (<DrawerButton testID='evaluateDrawerButton' text='Evaluate' onPress={this.handlePressEvaluate} />)}
+        {this.props.loggedIn && (<DrawerButton testID='membersDrawerButton' text='Members' onPress={this.handlePressMembers} />)}
+        {this.props.loggedIn && (<DrawerButton testID='findNotificationDrawerButton' text='Notifications' onPress={this.handlePressFindNotification} />)}
+        {/* end */}
         {this.props.loggedIn && (<DrawerButton testID='settingsDrawerButton' text='Settings' onPress={this.handlePressSettings} />)}
         {this.props.loggedIn && (<DrawerButton testID='changePasswordDrawerButton' text='Change Password' onPress={this.handlePressChangePassword} />)}
         {this.props.loggedIn && (<DrawerButton testID='logoutDrawerButton' text='Logout' onPress={this.handlePressLogout} />)}
