@@ -9,6 +9,17 @@ import ReduxPersist from '../../config/redux-persist'
 export const reducers = combineReducers({
   appState: require('./app-state.reducer').reducer,
   users: require('./user.reducer').reducer,
+  teachers: require('../../modules/entities/teacher/teacher.reducer').reducer,
+  teacherDocuments: require('../../modules/entities/teacher-document/teacher-document.reducer').reducer,
+  documents: require('../../modules/entities/document/document.reducer').reducer,
+  documentTypes: require('../../modules/entities/document-type/document-type.reducer').reducer,
+  notifications: require('../../modules/entities/notification/notification.reducer').reducer,
+  notificationTypes: require('../../modules/entities/notification-type/notification-type.reducer').reducer,
+  headQuaters: require('../../modules/entities/head-quater/head-quater.reducer').reducer,
+  criteriaTypes: require('../../modules/entities/criteria-type/criteria-type.reducer').reducer,
+  answers: require('../../modules/entities/answer/answer.reducer').reducer,
+  critetiaEvaluates: require('../../modules/entities/critetia-evaluate/critetia-evaluate.reducer').reducer,
+  fullEvaluates: require('../../modules/entities/full-evaluate/full-evaluate.reducer').reducer,
   // ignite-jhipster-redux-store-import-needle
   account: require('./account.reducer').reducer,
   login: require('../../modules/login/login.reducer').reducer,
