@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { ScrollView, Image, BackHandler } from 'react-native'
 import { Navigation } from 'react-native-navigation'
 
-import { loginScreen, registerScreen, forgotPasswordScreen, changePasswordScreen, settingsScreen, entitiesScreen, documentStorage, evaluate, findNotification, members, uploadDocument } from '../layouts'
+import { loginScreen, registerScreen, forgotPasswordScreen, changePasswordScreen, settingsScreen, entitiesScreen, documentStorage, evaluate, findNotification, members, uploadDocument,home } from '../layouts'
 import { connect } from 'react-redux'
 
 import styles from './drawer-content.styles'
@@ -67,6 +67,11 @@ class DrawerContent extends Component {
       this.hideSideMenu()
       documentStorage()
     }
+    //home thanh code
+    handlePressHome = () => {
+      this.hideSideMenu()
+      home()
+    }
     handlePressEvaluate = () => {
       this.hideSideMenu()
       evaluate()
@@ -93,6 +98,7 @@ class DrawerContent extends Component {
         {!this.props.loggedIn && (<DrawerButton testID='forgotPasswordDrawerButton' text='Forgot Password' onPress={this.handlePressForgotPassword} />)}
         {this.props.loggedIn && (<DrawerButton testID='entitiesDrawerButton' text='Entities' onPress={this.handlePressEntities} />)}
         {/* create menu sidebar by Tung */}
+        {this.props.loggedIn && (<DrawerButton testID='HomeDrawerButton' text='Home' onPress={this.handlePressHome} />)}
         {this.props.loggedIn && (<DrawerButton testID='documentStorageDrawerButton' text='Document Storage' onPress={this.handlePressDocumentStorage} />)}
         {this.props.loggedIn && (<DrawerButton testID='uploadDocumentDrawerButton' text='Upload Document' onPress={this.handlePressUploadDocument} />)}
         {this.props.loggedIn && (<DrawerButton testID='evaluateDrawerButton' text='Evaluate' onPress={this.handlePressEvaluate} />)}

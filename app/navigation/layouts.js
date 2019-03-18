@@ -52,6 +52,7 @@ import FullEvaluateEntityDetailScreen from '../modules/entities/full-evaluate/fu
 import FullEvaluateEntityEditScreen from '../modules/entities/full-evaluate/full-evaluate-entity-edit-screen'
 
 // import by Tung
+import Home from '../modules/trangChu/trangChu'
 import DocumentStorage from '../modules/DocumentStorage/documentStorage'
 import FindNotification from '../modules/FindNotification/findNotification'
 import Evaluate from '../modules/Evaluate/evaluate'
@@ -105,6 +106,7 @@ export const FULL_EVALUATE_ENTITY_EDIT_SCREEN = 'Nav.FullEvaluateEntityEditScree
 
 // export by Tung
 export const DOCUMENT_STORAGE = 'Nav.DocumentStorage'
+export const HOME = 'Nav.trangChu'
 export const FIND_NOTIFICATION = 'Nav.FindNotification'
 export const EVALUATE = 'Nav.Evaluate'
 export const MEMBERS = 'Nav.Members'
@@ -230,6 +232,7 @@ export function registerScreensAndStartApp () {
 
   // Navigation by Tung
   Navigation.registerComponentWithRedux(DOCUMENT_STORAGE, () => DocumentStorage, Provider, store)
+  Navigation.registerComponentWithRedux(HOME, () => Home, Provider, store)
   Navigation.registerComponentWithRedux(FIND_NOTIFICATION, () => FindNotification, Provider, store)
   Navigation.registerComponentWithRedux(EVALUATE, () => Evaluate, Provider, store)
   Navigation.registerComponentWithRedux(MEMBERS, () => Members, Provider, store)
@@ -973,6 +976,22 @@ export const documentStorage = (data) => Navigation.push('center', {
       topBar: {
         title: {
           text: 'Document Storage',
+          color: Colors.snow
+        }
+      }
+    }
+  }
+})
+export const home = (data) => Navigation.push('center', {
+  component: {
+    name: HOME,
+    passProps: {
+      data
+    },
+    options: {
+      topBar: {
+        title: {
+          text: 'Home',
           color: Colors.snow
         }
       }
