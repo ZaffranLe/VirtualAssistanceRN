@@ -1,12 +1,15 @@
 import React from 'react'
-import {  } from 'react-native'
+import {View  } from 'react-native'
 import { Navigation } from 'react-native-navigation'
-
+import ImageSlider from 'react-native-image-slider';
 export default class UploadDocument extends React.Component {
 
   render () {
     return (
-      <div></div>
-    )
+     <ImageSlider images={[
+        'http://placeimg.com/640/480/any',
+        'http://placeimg.com/640/480/any',
+        'http://placeimg.com/640/480/any'
+      ]}/>)
   }
 }

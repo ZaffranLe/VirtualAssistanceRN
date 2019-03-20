@@ -9,17 +9,17 @@ export default class FindNotification extends React.Component {
     this.state = {
       tableHead: ['#', 'Tên văn bản', 'Thể loại', 'Ngày đăng',''],
       tableData: [
-        ['1', '12', '3', '4','Đọc'],
-        ['a', 'b', 'c', 'd','Đọc'],
-        ['1', '2', '3', '456','Đọc'],
-        ['a', 'b', 'c', 'd','Đọc'],
-        ['a', 'b', 'c', 'd','Đọc'],
-        ['a', 'b', 'c', 'd','Đọc'],
-        ['a', 'b', 'c', 'd','Đọc'],
-        ['a', 'b', 'c', 'd','Đọc'],
-        ['a', 'b', 'c', 'd','Đọc'],
-        ['a', 'b', 'c', 'd','Đọc'],
-        ['a', 'b', 'c', 'd','Đọc'],
+        ['1', '12', '3', '4',''],
+        ['a', 'b', 'c', 'd',''],
+        ['1', '2', '3', '456',''],
+        ['a', 'b', 'c', 'd',''],
+        ['a', 'b', 'c', 'd',''],
+        ['a', 'b', 'c', 'd',''],
+        ['a', 'b', 'c', 'd',''],
+        ['a', 'b', 'c', 'd',''],
+        ['a', 'b', 'c', 'd',''],
+        ['a', 'b', 'c', 'd',''],
+        ['a', 'b', 'c', 'd',''],
 
       ],
       text: 'Tìm kiếm theo tên văn bản',
@@ -37,11 +37,12 @@ export default class FindNotification extends React.Component {
     head: { height: 40, backgroundColor: '#f1f8ff' },
     text: { margin: 6 },
     btn: { width: 58, height: 18, backgroundColor: '#78B7BB', borderRadius: 2 },
-    btnText: { textAlign: 'center', color: '#fff' }
+    btnText: { textAlign: 'center', color: '#fff' },
+    row: { flexDirection: 'row', backgroundColor: '#FFF1C1' }
 
   });
   _alertIndex(index) {
-    Alert.alert(`This is row ${index + 1}`);
+    Alert.alert(`This is document ${index + 1}`);
   }
   render() {
     const state = this.state;
@@ -76,18 +77,18 @@ export default class FindNotification extends React.Component {
           <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
 
             <Row data={state.tableHead} style={styles.head} textStyle={styles.text} />
-            <Rows data={state.tableData} textStyle={styles.text} />
-            {/* {
+            {/* <Rows data={state.tableData} textStyle={styles.text} /> */}
+            {
               state.tableData.map((rowData, index) => (
                 <TableWrapper key={index} style={styles.row}>
                   {
                     rowData.map((cellData, cellIndex) => (
-                      <Cell key={cellIndex} data={cellIndex === 3 ? element(cellData, index) : cellData} textStyle={styles.text} />
+                      <Cell key={cellIndex} data={cellIndex === 4 ? element(cellData, index) : cellData} textStyle={styles.text} />
                     ))
                   }
                 </TableWrapper>
               ))
-            } */}
+            }
 
 
 
