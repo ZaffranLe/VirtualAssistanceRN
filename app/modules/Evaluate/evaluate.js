@@ -44,6 +44,9 @@ export default class Evaluate extends React.Component {
     row: { flexDirection: 'row', backgroundColor: '#FFF1C1' }
 
   });
+  _alertIndex(index) {
+    Alert.alert(`This is document ${index + 1}`);
+  }
   render () {
     const state = this.state;
     const styles = this.styles;
