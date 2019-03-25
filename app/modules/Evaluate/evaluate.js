@@ -30,7 +30,7 @@ export default class Evaluate extends React.Component {
 
       ],
       text: 'Tìm kiếm theo tên văn bản',
-      
+      checked: ''
 
 
     }
@@ -50,59 +50,62 @@ export default class Evaluate extends React.Component {
     const element = (data, index) => (
       <TouchableOpacity onPress={() => this._alertIndex(index)}>
         <View>
-        <RadioButton
-          value="ChuaDat"
-          status={checked === 'ChuaDat' ? 'checked' : 'unchecked'}
-          onPress={() => { this.setState({ checked: 'first' }); }}
-        />
-        <RadioButton
-          value="Dat"
-          status={checked === 'Dat' ? 'checked' : 'unchecked'}
-          onPress={() => { this.setState({ checked: 'second' }); }}
-        />
-        <RadioButton
-          value="Kha"
-          status={checked === 'Kha' ? 'checked' : 'unchecked'}
-          onPress={() => { this.setState({ checked: 'second' }); }}
-        />
-        <RadioButton
-          value="Tot"
-          status={checked === 'Tot' ? 'checked' : 'unchecked'}
-          onPress={() => { this.setState({ checked: 'second' }); }}
-        />
+          <RadioButton
+            value="ChuaDat"
+            status={this.state.checked === 'ChuaDat' ? 'checked' : 'unchecked'}
+            onPress={() => { this.setState({ checked: 'first' }); }}
+          />
+        </View>
+        <View>
+          <RadioButton
+            value="Dat"
+            status={this.state.checked === 'Dat' ? 'checked' : 'unchecked'}
+            onPress={() => { this.setState({ checked: 'second' }); }}
+          />
+        </View>
+        <View>
+          <RadioButton
+            value="Kha"
+            status={this.state.checked === 'Kha' ? 'checked' : 'unchecked'}
+            onPress={() => { this.setState({ checked: 'second' }); }}
+          />
+        </View>
+        <View>
+          <RadioButton
+            value="Tot"
+            status={this.state.checked === 'Tot' ? 'checked' : 'unchecked'}
+            onPress={() => { this.setState({ checked: 'second' }); }}
+          />
       </View>
       </TouchableOpacity>
     );
     return (
-      <ScrollView>
       <View>
-        <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 30 }}>Bảng đánh giá</Text>
+        <ScrollView>
+          <View>
+            <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 30 }}>Bảng đánh giá</Text>
+          </View>
+          
+          <View style={styles.container}>
+            <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
+
+              <Row data={state.tableHead} style={styles.head} textStyle={styles.text} />
+              {/* <Rows data={state.tableData} textStyle={styles.text} /> */}
+              {
+                state.tableData.map((rowData, index) => (
+                  <TableWrapper key={index} style={styles.row}>
+                    {
+                      rowData.map((cellData, cellIndex) => (
+                        <Cell key={cellIndex} data={cellIndex === 1 ? element(cellData, index) : cellData} textStyle={styles.text} />
+                        ))
+                      }
+                  </TableWrapper>
+                ))
+              }
+            </Table>
+          </View>
+        </ScrollView>
       </View>
-      
-      <View style={styles.container}>
-        <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
-
-          <Row data={state.tableHead} style={styles.head} textStyle={styles.text} />
-          {/* <Rows data={state.tableData} textStyle={styles.text} /> */}
-          {
-            state.tableData.map((rowData, index) => (
-              <TableWrapper key={index} style={styles.row}>
-                {
-                  rowData.map((cellData, cellIndex) => (
-                    <Cell key={cellIndex} data={cellIndex === 1 ? element(cellData, index) : cellData} textStyle={styles.text} />
-                  ))
-                }
-              </TableWrapper>
-            ))
-          }
-
-
-
-
-
-        </Table>
-      </View>
-    </ScrollView>
     )
   }
 }
