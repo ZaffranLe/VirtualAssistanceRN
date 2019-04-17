@@ -1,103 +1,143 @@
 import React from 'react'
 import {
   Badge,
-  View, Text, ScrollView, StyleSheet, Button, TouchableOpacity, Alert, ListView
+  View, Text, ScrollView, StyleSheet, Button, TouchableOpacity, Alert, ListView,TextInput
 } from 'react-native'
 import { Navigation } from 'react-native-navigation'
 import * as Icon from 'react-native-vector-icons'
+import { Table, Row, Rows, Cell, TableWrapper } from 'react-native-table-component';
+import { Dropdown } from 'react-native-material-dropdown';
 export default class DocumentStorage extends React.Component {
 
-  handlePress = () => {
-
-  }
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
-      text: 'Tìm kiếm theo tên văn bản'
-    }
-    // this.state = {
-    //   dataSource: ds.cloneWithRows([
-    //     {title:['Document 1 ','Document 2 ','Document 3 ','Document 4 ']},
-    //     {content:['Document 1 ','Document 2 ','Document 3 ','Document 4 ']}
+      tableHead: ['Id', 'Tên tài liệu', 'Mô tả  ', 'Thẻ tìm kiếm','Trạng thái chia sẻ','Thể loại tài liệu',''],
+      tableData: [
+        ['1', 'Bài giảng số 1', 'Kiến thức...', '#toan','Riêng tư','Toán',''],
+        ['2', 'Bài giảng số 3', 'Kiến thức...', '#van','Riêng tư','Văn',''],
+        ['3', 'Bài giảng số 4', 'Kiến thức...', '#anh','Riêng tư','Anh',''],
+        ['4', 'Bài giảng số 2', 'Kiến thức...', '#ly','Riêng tư','Lý',''],
+        ['5', 'Bài giảng số 5', 'Kiến thức...', '#hoa','Riêng tư','Hóa',''],
         
 
-    //   ]),
-    // };
-  };
+      ],
+      tableData2: [
+        ['6', 'Bài giảng số 1', 'Kiến thức...', '#toan','Công khai','Toán',''],
+        ['7', 'Bài giảng số 3', 'Kiến thức...', '#van','Công khai','Văn',''],
+        ['8', 'Bài giảng số 4', 'Kiến thức...', '#anh','Công khai','Anh',''],
+        ['9', 'Bài giảng số 2', 'Kiến thức...', '#ly','Công khai','Lý',''],
+        ['10', 'Bài giảng số 5', 'Kiến thức...', '#hoa','Công khai','Hóa',''],
+        
 
+      ],
+      text: 'Tìm kiếm theo tên văn bản',
+      data: [{ value: 'Tất cả' },
+      { value: 'Luật' },
+      { value: 'Thông báo' }
+
+      ],
+
+
+    }
+  };
   styles = StyleSheet.create({
     container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
-    head: { height: 40, backgroundColor: '#f1f8ff' },
+    head: {  backgroundColor: '#f1f8ff' },
     text: { margin: 6 },
-    btn: { width: '90%', height: 50, backgroundColor: '#78B7BB', borderRadius: 2, alignItems: 'center' },
-    btnText: { textAlign: 'center', color: '#fff', fontSize: 24 }
-
+    btn: { width: 35, height: 18, backgroundColor: '#78B7BB', borderRadius: 2 },
+    btnText: { textAlign: 'center', color: '#fff' },
+    row: { flexDirection: 'row', backgroundColor: '#FFF1C1' }
 
   });
-
-  _alertIndex() {
-    Alert.alert(`This is upload method`);
+  _alertIndex(index) {
+    Alert.alert(`This is document ${index + 1}`);
   }
   render() {
     const state = this.state;
-    const ds = this.ds;
     const styles = this.styles;
-    
+    const element = (data, index) => (
+      <TouchableOpacity onPress={() => this._alertIndex(index)}>
+        <View style={styles.btn}>
+          <Text style={styles.btnText}>Đọc</Text>
+        </View>
+      </TouchableOpacity>
+    );
 
     return (
-      // Try removing the `flex: 1` on the parent View.
-      // The parent will not have dimensions, so the children can't expand.
-      // What if you add `height: 300` instead of `flex: 1`?
+
       <ScrollView>
-        <View style={{ marginTop: 10, marginLeft: 45 }}>
-          <TouchableOpacity onPress={() => this._alertIndex()} >
-            <View style={styles.btn}>
-              <Text style={styles.btnText}>Upload</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
+       
         <View style={styles.container}>
           <TextInput
             style={{ height: 40, borderColor: 'gray', borderWidth: 1, borderRadius: 10, marginTop: 20, width: 300 }}
             onChangeText={(text) => this.setState({ text })}
-            value={this.state.text}
+            value='Tìm theo tên tài liệu'
           />
-          </View>
-        <View>
-          {/* <ListView
-            dataSource={this.state.dataSource}
-            renderRow={(rowData) =>
-              <View>
-                <Text>{rowData.title}</Text>
-                <Text>{rowData.content}</Text>
-              </View>
-            }
+          <TextInput
+            style={{ height: 40, borderColor: 'gray', borderWidth: 1, borderRadius: 10, marginTop: 20, width: 300 }}
+            onChangeText={(text) => this.setState({ text })}
+            value='Tìm theo tag'
+          />
+          {/* <Dropdown
+            label='Tìm kiếm theo loại văn bản'
+            data={state.data}
+
           /> */}
-          <Text style={{fontSize:35}}>Tài liệu 1</Text>
-            <Text style={{fontSize:24}}>Đây là nội dung tài liệu 1 ...</Text>
-
-
         </View>
-        <View  >
-            <Text style={{fontSize:35}} >Tài liệu 2</Text>
-            <Text style={{fontSize:24}}>Đây là nội dung tài liệu 2</Text>
-           
-          </View>
-        <View  >
-            <Text style={{fontSize:35}} >Tài liệu 3</Text>
-            <Text style={{fontSize:24}}>Đây là nội dung tài liệu 2</Text>
-           
-          </View>
-        <View  >
-            <Text style={{fontSize:35}} >Tài liệu 4</Text>
-            <Text style={{fontSize:24}}>Đây là nội dung tài liệu 2</Text>
-           
-          </View>
+        <View>
+          <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 30 }}>Tài liệu dạy học cá nhân</Text>
+        </View>
+        <View style={styles.container}>
+          <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
+
+            <Row data={state.tableHead} style={styles.head} textStyle={styles.text}  />
+            {/* <Rows data={state.tableData} textStyle={styles.text} /> */}
+            {
+              state.tableData.map((rowData, index) => (
+                <TableWrapper key={index} style={styles.row}>
+                  {
+                    rowData.map((cellData, cellIndex) => (
+                      <Cell key={cellIndex} data={cellIndex === 6 ? element(cellData, index) : cellData} textStyle={styles.text} />
+                    ))
+                  }
+                </TableWrapper>
+              ))
+            }
+
+
+
+
+
+          </Table>
+        </View>
+        <View>
+          <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 30 }}>Tài liệu dạy học công khai</Text>
+        </View>
+        <View style={styles.container}>
+          <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
+
+            <Row data={state.tableHead} style={styles.head} textStyle={styles.text} />
+            {/* <Rows data={state.tableData} textStyle={styles.text} /> */}
+            {
+              state.tableData2.map((rowData, index) => (
+                <TableWrapper key={index} style={styles.row}>
+                  {
+                    rowData.map((cellData, cellIndex) => (
+                      <Cell key={cellIndex} data={cellIndex === 6 ? element(cellData, index) : cellData} textStyle={styles.text} />
+                    ))
+                  }
+                </TableWrapper>
+              ))
+            }
+
+
+
+
+
+          </Table>
+        </View>
       </ScrollView>
-
-
-    );
+    )
   }
-
 }

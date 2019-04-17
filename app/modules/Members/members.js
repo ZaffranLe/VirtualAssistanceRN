@@ -7,27 +7,16 @@ export default class Members extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tableHead: ['ID', 'Họ Tên', 'Địa chỉ', 'Số điện thoại', 'Mạng xã hội'],
+      tableHead: ['ID', 'Họ Tên', 'SĐT', 'Email', 'Cấp độ'],
       tableData: [
-        ['1', '2', '3', '4', '5'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['1', '2', '3', '456', '789'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e'],
-        ['a', 'b', 'c', 'd', 'e']
+        ['1', 'Nguyễn Văn Anh', '091829222', 'anh@mail.com', 'Giáo viên'],
+        ['2', 'Nguyễn Văn Bình', '091238833', 'binh@mail.com', 'Giáo viên'],
+        ['3', 'Đinh Tiến Dũng', '01812112', 'dung@mail.com', 'Giáo viên'],
+        ['4', 'Bùi Thị Định', '09337833', 'dinh@mail.com', 'Giáo viên'],
+        ['5', 'Lê Văn Giang', '09322333', 'giang@mail.com', 'Giáo viên'],
+        ['6', 'Nguyễn Tuấn Quang', '09867564', 'quang@mail.com', 'Giáo viên'],
+        ['7', 'Lê Sơn Tùng', '09227833', 'tung@mail.com', 'Giáo viên'],
+     
       ],
       text: 'Nhập họ tên cần tìm kiếm'
     }
@@ -43,13 +32,20 @@ export default class Members extends React.Component {
     return (
       <ScrollView>
         <View>
-          <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 30 }}>Danh sách thành viên</Text>
+          <Text style={{ marginTop: 20, marginLeft: 20, fontSize: 30 }}>Danh sách giáo viên</Text>
         </View>
         <View style={{alignItems:'center'}}>
           <TextInput
             style={{ height: 40, borderColor: 'gray', borderWidth: 1,borderRadius:10,marginTop:20,width:300 }}
             onChangeText={(text) => this.setState({ text })}
-            value={this.state.text}
+            value='Tìm kiếm theo SĐT'
+          />
+        </View>
+        <View style={{alignItems:'center'}}>
+          <TextInput
+            style={{ height: 40, borderColor: 'gray', borderWidth: 1,borderRadius:10,marginTop:20,width:300 }}
+            onChangeText={(text) => this.setState({ text })}
+            value='Tìm kiếm theo email'
           />
         </View>
         <View style={styles.container}>

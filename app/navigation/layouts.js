@@ -975,7 +975,7 @@ export const documentStorage = (data) => Navigation.push('center', {
     options: {
       topBar: {
         title: {
-          text: 'Document Storage',
+          text: 'Tài liệu dạy học',
           color: Colors.snow
         }
       }
@@ -991,7 +991,7 @@ export const home = (data) => Navigation.push('center', {
     options: {
       topBar: {
         title: {
-          text: 'Home',
+          text: 'Trang chủ',
           color: Colors.snow
         }
       }
@@ -1008,7 +1008,7 @@ export const findNotification = (data) => Navigation.push('center', {
     options: {
       topBar: {
         title: {
-          text: 'Find Notification',
+          text: 'Văn bản',
           color: Colors.snow
         }
       }
@@ -1025,7 +1025,7 @@ export const evaluate = (data) => Navigation.push('center', {
     options: {
       topBar: {
         title: {
-          text: 'Evaluate',
+          text: 'Đánh giá theo thông tư 20',
           color: Colors.snow
         }
       }
@@ -1042,7 +1042,7 @@ export const members = (data) => Navigation.push('center', {
     options: {
       topBar: {
         title: {
-          text: 'Members',
+          text: 'Giáo viên',
           color: Colors.snow
         }
       }

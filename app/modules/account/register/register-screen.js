@@ -21,13 +21,24 @@ class RegisterScreen extends React.Component {
         password: t.String,
         confirmPassword: t.String,
         email: t.String,
+        identityNumber: t.String,
+        FirstName: t.String,
+        LastName: t.String,
+        Phone: t.String,
+        Address: t.String,
+        Dob: t.String,
         langKey: t.String
       }),
-      accountValue: { login: null, password: null, confirmPassword: null, email: null, langKey: 'en' },
+      accountValue: { login: null, password: null, confirmPassword: null, email: null,FirstName:null,LastName:null,identityNumber:null,Phone:null,Address:null,Dob:null, langKey: 'en' },
       options: {
         fields: {
           login: {
-            label: 'Username',
+            label: 'Tên tài khoản',
+            returnKeyType: 'next',
+            onSubmitEditing: () => this.refs.form.getComponent('password').refs.input.focus()
+          },
+          email: {
+            label: 'Email',
             returnKeyType: 'next',
             onSubmitEditing: () => this.refs.form.getComponent('password').refs.input.focus()
           },

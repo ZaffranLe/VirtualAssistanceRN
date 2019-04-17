@@ -7,19 +7,14 @@ export default class FindNotification extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tableHead: ['#', 'Tên văn bản', 'Thể loại', 'Ngày đăng',''],
+      tableHead: ['Tên văn bản', 'Mô tả', 'Cơ quan ban hành', 'Ngày ban hành',''],
       tableData: [
-        ['1', '12', '3', '4',''],
-        ['a', 'b', 'c', 'd',''],
-        ['1', '2', '3', '456',''],
-        ['a', 'b', 'c', 'd',''],
-        ['a', 'b', 'c', 'd',''],
-        ['a', 'b', 'c', 'd',''],
-        ['a', 'b', 'c', 'd',''],
-        ['a', 'b', 'c', 'd',''],
-        ['a', 'b', 'c', 'd',''],
-        ['a', 'b', 'c', 'd',''],
-        ['a', 'b', 'c', 'd',''],
+        ['Thông tư 20 BGD', 'Đánh giá gv', 'Bộ giáo dục', '20/5/2018','Xem'],
+        ['Thông báo nghỉ', 'Nghỉ lễ', 'Nhà trường', '20/5/2018','Xem'],
+        ['Thông báo tăng lương', 'Tăng lương cho ...', 'Bộ giáo dục', '20/5/2018','Xem'],
+        ['Thông báo lịch giảng dạy', 'Lịch giảng dạy...', 'Nhà trường', '20/5/2018','Xem']
+        
+        
 
       ],
       text: 'Tìm kiếm theo tên văn bản',
@@ -34,7 +29,7 @@ export default class FindNotification extends React.Component {
   };
   styles = StyleSheet.create({
     container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
-    head: { height: 40, backgroundColor: '#f1f8ff' },
+    head: { backgroundColor: '#f1f8ff' },
     text: { margin: 6 },
     btn: { width: 58, height: 18, backgroundColor: '#78B7BB', borderRadius: 2 },
     btnText: { textAlign: 'center', color: '#fff' },
@@ -67,11 +62,7 @@ export default class FindNotification extends React.Component {
             onChangeText={(text) => this.setState({ text })}
             value={this.state.text}
           />
-          <Dropdown
-            label='Tìm kiếm theo loại văn bản'
-            data={state.data}
-
-          />
+          
         </View>
         <View style={styles.container}>
           <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>

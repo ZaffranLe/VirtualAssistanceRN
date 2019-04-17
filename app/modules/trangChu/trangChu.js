@@ -16,33 +16,27 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tableHead1: ['Head', 'Head2', 'Head3', 'Head4','Head5'],
+      tableHead1: ['Tên văn bản', 'Mô tả', 'Cơ quan ban hành', 'Ngày ban hành',''],
       tableData1: [
-        ['1', '2', '3', '4','5'],
-        ['a', 'b', 'c', 'd','e'],
-        ['1', '2', '3', '456','789'],
-        ['a', 'b', 'c', 'd','e']
+        ['Thông tư 20 BGD', 'Đánh giá gv', 'Bộ giáo dục', '20/5/2018','Xem'],
+        ['Thông báo nghỉ', 'Nghỉ lễ', 'Nhà trường', '20/5/2018','Xem'],
+        ['Thông báo tăng lương', 'Tăng lương cho ...', 'Bộ giáo dục', '20/5/2018','Xem'],
+        ['Thông báo lịch giảng dạy', 'Lịch giảng dạy...', 'Nhà trường', '20/5/2018','Xem']
       ],
-      tableHead2: ['Tên tài liệu', 'Loại', 'Dung lượng'],
-      tableData2: [
-        ['1', '2', '3'],
-        ['a', 'b', 'c'],
-        ['1', '2', '3'],
-        ['a', 'b', 'c']
-      ],
+     
       tableHead3: ['Kỳ đánh giá', 'Xếp loại'],
       tableData3: [
-        ['1', 'Tốt'],
-        ['2', 'Khá tốt'],
-        ['3', 'Rất tốt'],
-        ['4', 'Khá']
+        ['Quý 1 Năm 2018', 'Tốt'],
+        ['Quý 2 Năm 2018', 'Khá '],
+        ['Quý 3 Năm 2018', 'Tốt'],
+        ['Quý 4 Năm 2018', 'Đạt']
       ]
     }
   };
 
   styles = StyleSheet.create({
     container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
-    head: { height: 40, backgroundColor: '#f1f8ff' },
+    head: {  backgroundColor: '#f1f8ff' },
     text: { margin: 6 },
     progressCard1: {
       flex: 1,
@@ -102,19 +96,19 @@ export default class Home extends React.Component {
           <View style={styles.progressCard1} >
             
             <Text style={{fontSize:24,color:'white'}}>Số tài liệu chia sẻ</Text>
-            <Text style={{fontSize:35,color:'white'}}>200K</Text>
+            <Text style={{fontSize:35,color:'white'}}>200</Text>
             
 
             <Progress.Bar  style={{  marginTop:20 }} progress={0.3} width={300} />
           </View>
           <View style={styles.progressCard2} >
             <Text style={{fontSize:24,color:'white'}} >Số tài liệu trong kho</Text>
-            <Text style={{fontSize:35,color:'white'}}>250K</Text>
+            <Text style={{fontSize:35,color:'white'}}>140</Text>
             <Progress.Bar style={{marginTop:20  }} progress={0.4} width={300} />
           </View>
           <View style={styles.progressCard3} >
             <Text style={{fontSize:24,color:'white'}}>Dung lượng còn lại</Text>
-            <Text style={{fontSize:35,color:'white'}}>190K</Text>
+            <Text style={{fontSize:35,color:'white'}}>100MB</Text>
             <Progress.Bar  style={{ marginTop:20 }} progress={0.5} width={300} />
           </View>
         </View>
@@ -127,15 +121,7 @@ export default class Home extends React.Component {
             <Rows data={state.tableData1} textStyle={styles.text} />
           </Table>
         </View>
-        <View>
-          <Text style={{marginTop:20,marginLeft:20,fontSize:30}}>Tài liệu trong kho</Text>
-        </View>
-        <View style={styles.container}>
-        <Table borderStyle={{ borderWidth: 2, borderColor: '#c8e1ff' }}>
-            <Row data={state.tableHead2} style={styles.head} textStyle={styles.text} />
-            <Rows data={state.tableData2} textStyle={styles.text} />
-          </Table>
-        </View>
+        
         <View>
           <Text style={{marginTop:20,marginLeft:20,fontSize:30}}>Kết quả tự đánh giá</Text>
         </View>

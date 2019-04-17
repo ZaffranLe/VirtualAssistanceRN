@@ -96,17 +96,17 @@ class DrawerContent extends Component {
         {!this.props.loggedIn && (<DrawerButton testID='loginDrawerButton' text='Login' onPress={this.handlePressLogin} />)}
         {!this.props.loggedIn && (<DrawerButton testID='registerDrawerButton' text='Register' onPress={this.handlePressRegister} />)}
         {!this.props.loggedIn && (<DrawerButton testID='forgotPasswordDrawerButton' text='Forgot Password' onPress={this.handlePressForgotPassword} />)}
-        {this.props.loggedIn && (<DrawerButton testID='entitiesDrawerButton' text='Entities' onPress={this.handlePressEntities} />)}
+        {/* {this.props.loggedIn && (<DrawerButton testID='entitiesDrawerButton' text='Entities' onPress={this.handlePressEntities} />)} */}
         {/* create menu sidebar by Tung */}
-        {this.props.loggedIn && (<DrawerButton testID='HomeDrawerButton' text='Home' onPress={this.handlePressHome} />)}
-        {this.props.loggedIn && (<DrawerButton testID='documentStorageDrawerButton' text='Document Storage' onPress={this.handlePressDocumentStorage} />)}
-        {this.props.loggedIn && (<DrawerButton testID='uploadDocumentDrawerButton' text='Upload Document' onPress={this.handlePressUploadDocument} />)}
-        {this.props.loggedIn && (<DrawerButton testID='evaluateDrawerButton' text='Evaluate' onPress={this.handlePressEvaluate} />)}
-        {this.props.loggedIn && (<DrawerButton testID='membersDrawerButton' text='Members' onPress={this.handlePressMembers} />)}
-        {this.props.loggedIn && (<DrawerButton testID='findNotificationDrawerButton' text='Notifications' onPress={this.handlePressFindNotification} />)}
+        {this.props.loggedIn && (<DrawerButton testID='HomeDrawerButton' text='Trang chủ' onPress={this.handlePressHome} />)}
+        {this.props.loggedIn && (<DrawerButton testID='documentStorageDrawerButton' text='Tài liệu dạy học' onPress={this.handlePressDocumentStorage} />)}
+        {this.props.loggedIn && (<DrawerButton testID='uploadDocumentDrawerButton' text='Hồ sơ giáo viên' onPress={this.handlePressUploadDocument} />)}
+        {this.props.loggedIn && (<DrawerButton testID='evaluateDrawerButton' text='Đánh giá giáo viên theo TT20 ' onPress={this.handlePressEvaluate} />)}
+        {this.props.loggedIn && (<DrawerButton testID='membersDrawerButton' text='Danh sách giáo viên' onPress={this.handlePressMembers} />)}
+        {this.props.loggedIn && (<DrawerButton testID='findNotificationDrawerButton' text='Văn bản' onPress={this.handlePressFindNotification} />)}
         {/* end */}
-        {this.props.loggedIn && (<DrawerButton testID='settingsDrawerButton' text='Settings' onPress={this.handlePressSettings} />)}
-        {this.props.loggedIn && (<DrawerButton testID='changePasswordDrawerButton' text='Change Password' onPress={this.handlePressChangePassword} />)}
+        {/* {this.props.loggedIn && (<DrawerButton testID='settingsDrawerButton' text='Settings' onPress={this.handlePressSettings} />)} */}
+        {/* {this.props.loggedIn && (<DrawerButton testID='changePasswordDrawerButton' text='Change Password' onPress={this.handlePressChangePassword} />)} */}
         {this.props.loggedIn && (<DrawerButton testID='logoutDrawerButton' text='Logout' onPress={this.handlePressLogout} />)}
       </ScrollView>
     )

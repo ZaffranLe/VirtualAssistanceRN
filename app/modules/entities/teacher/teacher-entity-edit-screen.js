@@ -32,7 +32,7 @@ class TeacherEntityEditScreen extends React.Component {
         identityNumber: t.maybe(t.String),
         fullName: t.maybe(t.String),
         phone: t.maybe(t.String),
-        doB: t.maybe(t.Date),
+       
         address: t.maybe(t.String),
         email: t.maybe(t.String),
         password: t.maybe(t.String),
@@ -172,7 +172,7 @@ class TeacherEntityEditScreen extends React.Component {
       identityNumber: value.identityNumber || null,
       fullName: value.fullName || null,
       phone: value.phone || null,
-      doB: value.doB || null,
+     
       address: value.address || null,
       email: value.email || null,
       password: value.password || null,
@@ -189,7 +189,7 @@ class TeacherEntityEditScreen extends React.Component {
       identityNumber: value.identityNumber || null,
       fullName: value.fullName || null,
       phone: value.phone || null,
-      doB: value.doB || null,
+     
       address: value.address || null,
       email: value.email || null,
       password: value.password || null,
