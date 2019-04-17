@@ -10,6 +10,8 @@ export default class LaunchScreen extends React.Component {
     super(props)
     Navigation.events().bindComponent(this)
   }
+
+
   componentDidAppear () {
     Navigation.mergeOptions(this.props.componentId, {
       sideMenu: {
@@ -19,6 +21,8 @@ export default class LaunchScreen extends React.Component {
       }
     })
   }
+
+  
   showSideMenu () {
     Navigation.mergeOptions(this.props.componentId, {
       sideMenu: {
@@ -45,7 +49,7 @@ export default class LaunchScreen extends React.Component {
           <View style={styles.section} >
             <Image source={Images.ready} />
             <Text style={styles.sectionText}>
-              {'Welcome to your Ignite JHipster app.'}
+              {'Tro ly giao vien ao'}
             </Text>
           </View>
 

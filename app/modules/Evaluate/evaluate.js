@@ -4,12 +4,14 @@ import { Navigation } from 'react-native-navigation'
 import { Table, Row, Rows, Cell, TableWrapper } from 'react-native-table-component';
 import { RadioButton } from 'react-native-paper';
 
+
+
 export default class Evaluate extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      tableHead: [ 'Mô tả tiêu chí đánh giá                       ', 'Chưa đạt', 'Đạt','Khá', 'Tốt'],
+     
       tableData: [
         ['Tiêu chí 1: Đạo đức nhà giáo', '12', '3', '4',''],
         ['Tiêu chí 2: Phong cách nhà giáo', 'b', 'c', 'd',''],
